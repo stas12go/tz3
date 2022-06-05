@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\MortgageProgramController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::resource('/mortgage-programs', MortgageProgramController::class)->except([
+    'destroy'
+]);
+
+Route::resource('/apartments', ApartmentController::class)->except([
+    'destroy'
+]);

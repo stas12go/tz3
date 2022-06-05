@@ -29,7 +29,7 @@ class MortgageProgramSeeder extends Seeder
                 'name' => $name,
                 'interest_rate' => rand(5, 10),
                 'max_term' => 5 * rand(1, 6),
-                'min_initial_fee' => rand(10, 40),
+                'min_initial_fee' => 5 * rand(2, 8),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
