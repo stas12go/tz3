@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('apartments_mortgage_programs', function (Blueprint $table) {
-            $table->foreignId('apartment_id')->references('id')->on('apartments');
-            $table->foreignId('mortgage_program_id')->references('id')->on('mortgage_programs');
+            $table->foreignId('apartments_id')->references('id')->on('apartments');
+            $table->foreignId('mortgage_programs_id')->references('id')->on('mortgage_programs');
         });
     }
 

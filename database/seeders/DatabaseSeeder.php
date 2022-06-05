@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Apartment;
-use App\Models\MortgageProgram;
+use App\Models\Apartments;
+use App\Models\MortgagePrograms;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         Apartment::factory(20)->create();
+         Apartments::factory(20)->create();
 
 
         $this->call([

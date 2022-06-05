@@ -2,9 +2,9 @@
     {{ $slot }}
     @csrf
     <div class="form-group row mb-3">
-        <label for="mortgageProgramName" class="col-4 col-form-label">Название программы</label>
+        <label for="name" class="col-4 col-form-label">Название программы</label>
         <div class="col-8">
-            <input type="text" class="form-control" id="mortgageProgramName" name="mortgageProgramName" placeholder="Название программы" value="{{ old('mortgageProgramName', $item->name ?? '') }}" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Название программы" value="{{ old('name', $item->name ?? '') }}" required>
         </div>
     </div>
     <div class="form-group row mb-3">

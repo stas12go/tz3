@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Apartment;
-use App\Models\MortgageProgram;
+use App\Models\Apartments;
+use App\Models\MortgagePrograms;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -17,8 +17,8 @@ class ApartmentsMortgageProgramSeeder extends Seeder
      */
     public function run()
     {
-        $apartmentsEntriesCount = Apartment::all()->count();
-        $mortgageProgramsEntriesCount = MortgageProgram::all()->count();
+        $apartmentsEntriesCount = Apartments::all()->count();
+        $mortgageProgramsEntriesCount = MortgagePrograms::all()->count();
         for ($apartment = 1; $apartment <= $apartmentsEntriesCount; $apartment++) {
             for ($mortgageProgram = 1; $mortgageProgram <= $mortgageProgramsEntriesCount; $mortgageProgram++) {
                 DB::table('apartments_mortgage_programs')->insert([

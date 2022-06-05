@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MortgageProgram;
+use App\Models\MortgagePrograms;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -16,7 +16,7 @@ class MortgageProgramController extends Controller
      */
     public function index(): View
     {
-        $items = MortgageProgram::all();
+        $items = MortgagePrograms::all();
 
         return view('mortgage-programs.index', ['items' => $items]);
     }
@@ -39,9 +39,9 @@ class MortgageProgramController extends Controller
      */
     public function store(Request $request)
     {
-        $mortgageProgram = new MortgageProgram();
+        $mortgageProgram = new MortgagePrograms();
 
-        $mortgageProgram->name = $request->mortgageProgramName;
+        $mortgageProgram->name = $request->name;
         $mortgageProgram->interest_rate = $request->interestRate;
         $mortgageProgram->max_term = $request->maxTerm;
         $mortgageProgram->min_initial_fee = $request->minInitialFee;
@@ -56,10 +56,10 @@ class MortgageProgramController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param MortgageProgram $mortgageProgram
+     * @param MortgagePrograms $mortgageProgram
      * @return View
      */
-    public function edit(MortgageProgram $mortgageProgram): View
+    public function edit(MortgagePrograms $mortgageProgram): View
     {
         return view('mortgage-programs.edit', ['item' => $mortgageProgram]);
     }
@@ -68,13 +68,13 @@ class MortgageProgramController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param MortgageProgram $mortgageProgram
+     * @param MortgagePrograms $mortgageProgram
      * @return RedirectResponse
      */
-    public function update(Request $request, MortgageProgram $mortgageProgram): RedirectResponse
+    public function update(Request $request, MortgagePrograms $mortgageProgram): RedirectResponse
     {
         $data = $request->input();
-        $mortgageProgram->name = $data['mortgageProgramName'];
+        $mortgageProgram->name = $data['name'];
         $mortgageProgram->interest_rate = $data['interestRate'];
         $mortgageProgram->max_term = $data['maxTerm'];
         $mortgageProgram->min_initial_fee = $data['minInitialFee'];
