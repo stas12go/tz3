@@ -22,8 +22,8 @@ class ApartmentsMortgageProgramSeeder extends Seeder
         for ($apartment = 1; $apartment <= $apartmentsEntriesCount; $apartment++) {
             for ($mortgageProgram = 1; $mortgageProgram <= $mortgageProgramsEntriesCount; $mortgageProgram++) {
                 DB::table('apartments_mortgage_programs')->insert([
-                    'apartment_id' => $apartment,
-                    'mortgage_program_id' => $mortgageProgram
+                    'apartments_id' => $apartment,
+                    'mortgage_programs_id' => $mortgageProgram
                 ]);
             }
         }
