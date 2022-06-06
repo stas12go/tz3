@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
+    /*
+    | Heroku
+    */
+    'log' => 'errorlog',
 
     /*
     |--------------------------------------------------------------------------
